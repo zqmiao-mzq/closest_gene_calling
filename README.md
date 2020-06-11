@@ -34,3 +34,42 @@ Options:
        
        
 # abcd means four types of binding style(position relationship between TF and its two closest genes of each side), a, two genes are same direction of positive. c, same direction of negative. b, left side gene is positive direction and right side gene is negative direction. d, left gene is negative direction and right side is positive direction.
+
+
+=head1 NAME
+
+script - Using Getopt::Long and Pod::Usage
+
+=head1 SYNOPSIS
+
+script [options] [args ...]
+
+Options: 
+
+	-feature_file              * Feature_file or chromosome coordinate file, format:"chr  start  end"
+	-socre_file                * socre_file, like .sgr .bed(counted)
+
+	-chrom_column              Int. In feature_file, which column is chromosome name, counting from 1, Default is 1
+	-start_colum               Int. In feature_file, which column is start site, counting from 1, Default is 2
+	-end_column                Int. In feature_file, which column is end site, counting from 1, Default is 3
+	-direction_column|e        Int. In feature_file, which column is direction, counting from 1, Default is 4
+	
+	-start_range               Defined which range be scanned, Default is -1000,0
+	-end_range                 Defined which range be scanned, Default is 0,1000
+	
+	-start_bin                 Int. Window length for scanning start_range, units is bp, Default is 50 
+	-end_bin                   Int. Window length for scanning end_range, units is bp, Default is 50   
+
+	
+	#for relative range
+	-bin_count|b               Int. How many bins you want to check, Default is 20   
+	-merge                     Bool. whether merge start, end, and rel score together, Default is False
+	-read_count|rc             Int. read_count for normalization the score , Default is not to do normalization.
+	
+	#for output
+	-output_folder|of          Output result folder, Default is same folder with feature_file
+	-outout_name|on            Output result name, Default is same feature_file name combine socre_file name
+	
+
+	
+	-help			           brief help message
